@@ -108,8 +108,160 @@ while (numFac >= lista) {
   acomulador = acomulador * numFac;
   numFac--;
 }
-console.log(acomulador);
+// console.log(acomulador);
 
-for (let i = 5; i <= 1; i--) {
-  console.log("num", i);
+//! 16. Crea un programa que imprima los números del 1 al 10 usando un bucle for.
+for (let index = 1; index <= 10; index++) {
+  const element = index;
+  // console.log(element);
 }
+
+//! 17. Crea un programa que imprima los números pares del 1 al 20 usando un bucle for.
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    // console.log(i);
+  }
+}
+
+for (let i = 2; i <= 20; i += 2) {
+  // console.log(i);
+}
+
+//! 18. Crea un programa que imprima los números impares del 1 al 15 usando un bucle while.
+let desde = 1;
+while (desde <= 15) {
+  // console.log(desde);
+  desde += 2;
+}
+
+//! 19. Crea un programa que sume todos los números del 1 al 100 usando un bucle for y muestre el resultado en la consola.
+let sumaNums = 0;
+for (let i = 1; i <= 100; i++) {
+  sumaNums += i;
+}
+// console.log(sumaNums);
+
+//! 20. Crea un programa que calcule y muestre en la consola la tabla de multiplicar del número 7 (desde 1 hasta 10) usando un bucle for.
+for (let i = 1; i <= 10; i++) {
+  let contTabla = i * 7;
+  // console.log(`7 x ${i} = ${contTabla}`);
+}
+
+//! 21. Crea un programa que imprima los primeros 10 números de la secuencia de Fibonacci.
+let fibA = 0;
+let fibB = 1;
+
+for (let i = 3; i <= 10; i++) {
+  let sumFib = fibA + fibB;
+  // console.log(sumFib);
+  fibA = fibB;
+  fibB = sumFib;
+}
+
+//! 22. Crea un programa que tome un número como entrada y determine si es un número primo.
+let numPrimo = 4;
+let esPrimo = true;
+
+if (numPrimo < 2) {
+  esPrimo = false;
+} else {
+  for (let i = 2; i < numPrimo; i++) {
+    if (numPrimo % i === 0) {
+      esPrimo = false;
+      break;
+    }
+  }
+}
+// console.log(esPrimo);
+
+//! 23. Crea un programa que genere un número aleatorio entre 1 y 100 y permita al usuario adivinarlo mediante un bucle, indicando si el número introducido es mayor o menor al número secreto.
+// let numAleatorio = Math.floor(Math.random() * 10) + 1;
+// let numAdivinarUser;
+
+// while (numAdivinarUser !== numAleatorio) {
+//   numAdivinarUser = parseInt(prompt("Adivina el numero entre 1 y 10: "));
+
+//   if (isNaN(numAdivinarUser)) {
+//     // console.log("Por favor ingresa un numero valido");
+//     continue;
+//   }
+
+//   if (numAdivinarUser < 1 || numAdivinarUser > 10) {
+//     // console.log("El numero debe estar entre 1 y 10");
+//   }
+
+//   if (numAdivinarUser > numAleatorio) {
+//     // console.log("El numero secreto es menor");
+//   } else if (numAdivinarUser < numAleatorio) {
+//     // console.log("El numero secreto es mayor");
+//   } else if (numAdivinarUser === numAleatorio) {
+//     // console.log(`Adivinaste el numero secreto es ${numAleatorio}`);
+//   } else {
+//     // console.log("Por favor, ingresar un numero valido");
+//   }
+// }
+
+//! 24. Crea un programa que reciba un arreglo de números y determine cuál es el número más grande.
+let numeros = [4, 7, 1, 9, 3];
+let numMayor = [0];
+for (let num of numeros) {
+  if (num > numMayor) {
+    numMayor = num;
+  }
+}
+
+let mayorNumReduce = numeros.reduce((mayor, num) =>
+  num > mayor ? num : mayor
+);
+
+// console.log(`El numero mayor es: ${mayorNumReduce}`);
+
+//! 25. Dado un arreglo de números, encuentra el número más pequeño usando el método reduce.
+let numerosMenor = [12, 45, 2, 7, 34];
+let numMenor = numerosMenor.reduce((numAcum, num) =>
+  num < numAcum ? num : numAcum
+);
+
+// console.log(numMenor);
+
+//! 26. Dado un array de números, utiliza el método reduce para crear un nuevo array que contenga solo los números únicos (es decir, elimina los duplicados).
+let numeros3 = [4, 7, 4, 3, 9, 7, 1, 3, 4];
+let numUnicos = numeros3.reduce((acum, num) => {
+  if (!acum.includes(num)) {
+    acum.push(num);
+  }
+
+  return acum;
+}, []);
+// console.log(numUnicos);
+
+//! 26. Dado un array de números, escribe un programa que filtre y devuelva un nuevo array con los números que sean mayores a un valor específico (por ejemplo, 10).
+let numeros4 = [5, 12, 8, 20, 7, 15];
+
+let filtrarNumFilter = numeros4.filter((num) => num > 10);
+
+let filtrarNumReduce = numeros4.reduce((acum, num) => {
+  if (num > 10) {
+    acum.push(num);
+  }
+
+  return acum;
+}, []);
+
+let newArraNums = [];
+for (let num of numeros4) {
+  if (num > 10) {
+    newArraNums.push(num);
+  }
+}
+
+//! 27. Escribe un programa que sume todos los elementos de un array de números.
+let numeros5 = [5, 12, 8, 20, 7, 15];
+let sumaArrayReduce = numeros5.reduce((acumSum, num) => acumSum + num);
+
+let sumaAcomulada = 0;
+let sumaArrayEach = numeros5.forEach((num) => {
+  return (sumaAcomulada += num);
+});
+
+console.log(sumaAcomulada);
